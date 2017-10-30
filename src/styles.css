@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+.container {
+	width:96%;
+	padding:1% 2%;
+	text-align:center;
+}
+#title {
+	font-size:18px;
+	font-color:#666;
+}
+.container textarea {
+	display:block;
+	margin:15px auto;
+}
+#buttonAnalyze {
+	margin:15px 0;
+}

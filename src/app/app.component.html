@@ -1,0 +1,16 @@
+<div style="text-align:center">
+	<h1>{{title}}</h1>
+</div>
+
+<div class="container">
+	<form id="textForm">
+		<textarea name="words" cols="50" rows="25" #textToAnalyze></textarea>
+		<button type="button" (click)="analyzeText(textToAnalyze.value)">Analyze</button>
+	</form>
+
+	<div class="results">
+		<span>Total words: {{ totalWordCount }}</span>
+		<span>Unique words: {{ uniqueWordCount }}</span>
+		<span>Unique word ratio: {{ uniqueRatio }}%</span>
+	</div>
+</div>
