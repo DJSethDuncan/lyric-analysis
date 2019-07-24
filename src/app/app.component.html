@@ -1,12 +1,48 @@
 <div style="text-align:center">
 	<h1>{{title}}</h1>
+	<hr />
+	<div>
+		<h3>Examples</h3>
+		<table style="text-align:left;" cellspacing="20">
+			<tr>
+				<td>
+					<p><b>Daft Punk - Around the World</b></p>
+					<p>Total words: 432<br />
+					Unique words: 4<br />
+					Ratio: 0.93%</p>
+				</td>
+				<td>
+					<p><b>Queen - Bohemian Rhapsody</b></p>
+					<p>Total words: 365<br />
+					Unique words: 182<br />
+					Ratio: 49.86%</p>
+				</td>
+				<td>
+					<p><b>Eminem - Rap God</b></p>
+					<p>Total words: 1543<br />
+					Unique words: 679<br />
+					Ratio: 44.01%</p>
+				</td>
+				<td>
+					<p><b>Celine Dion - It's All Coming Back to me Now</b></p>
+					<p>Total words: 637<br />
+					Unique words: 159<br />
+					Ratio: 24.96%</p>
+				</td>
+			</tr>
+		</table>
+	</div>
 </div>
+
+<hr />
 
 <div class="container">
 	<form id="textForm">
-		<textarea name="words" cols="50" rows="25" #textToAnalyze></textarea>
+		<textarea name="words" cols="50" rows="25" #textToAnalyze placeholder="Paste song lyrics here"></textarea>
 		<button type="button" (click)="analyzeText(textToAnalyze.value)">Analyze</button>
 	</form>
+
+	<br />
 
 	<div class="results">
 		<span>Total words: {{ totalWordCount }}</span>
