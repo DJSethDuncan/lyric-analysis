@@ -1,0 +1,43 @@
+<div class="search-page">
+  <h2>Submit a Song</h2>
+  <p class="subtitle">Search for a song and submit it to the leaderboard.</p>
+
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="query"
+      placeholder="Search by song title or artist..."
+      (keyup.enter)="search()"
+    />
+    <button (click)="search()" [disabled]="searching">
+      {{ searching ? 'Searching...' : 'Search' }}
+    </button>
+  </div>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+
+  <div class="results" *ngIf="results.length > 0">
+    <div class="result-item" *ngFor="let track of results">
+      <img *ngIf="track.albumCover" [src]="track.albumCover" alt="Album cover" class="album-cover" />
+      <div class="track-info">
+        <strong>{{ track.title }}</strong>
+        <span>{{ track.artist }}</span>
+      </div>
+      <button (click)="submit(track)" [disabled]="submitting" class="submit-btn">
+        {{ submitting ? 'Submitting...' : 'Submit' }}
+      </button>
+    </div>
+  </div>
+
+  <div class="success" *ngIf="submittedSong">
+    <h3>Song added to the leaderboard!</h3>
+    <p><strong>{{ submittedSong.title }}</strong> by {{ submittedSong.artist }}</p>
+    <ul>
+      <li>Total words: {{ submittedSong.totalWords }}</li>
+      <li>Unique words: {{ submittedSong.uniqueWords }}</li>
+      <li>Unique ratio: {{ submittedSong.uniqueRatio }}%</li>
+      <li>Avg word length: {{ submittedSong.avgWordLength }} chars</li>
+    </ul>
+    <a routerLink="/leaderboard/unique_words">View Leaderboard &rarr;</a>
+  </div>
+</div>

@@ -1,3 +1,45 @@
-.results span {
-	display:block;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 2px solid #333;
+  margin-bottom: 32px;
+}
+
+.app-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+nav a.active {
+  background: #333;
+  color: #fff;
 }

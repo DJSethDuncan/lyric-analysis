@@ -1,0 +1,32 @@
+<div class="leaderboard-page">
+  <h2>Leaderboard</h2>
+
+  <div class="tabs">
+    <button
+      *ngFor="let m of metrics"
+      [class.active]="m.key === activeMetric"
+      (click)="selectMetric(m.key)"
+    >
+      {{ m.label }}
+    </button>
+  </div>
+
+  <p class="error" *ngIf="error">{{ error }}</p>
+  <p class="loading" *ngIf="loading">Loading...</p>
+
+  <div class="empty" *ngIf="!loading && !error && songs.length === 0">
+    No songs yet. <a routerLink="/search">Submit one!</a>
+  </div>
+
+  <ol class="song-list" *ngIf="songs.length > 0">
+    <li *ngFor="let song of songs; let i = index" class="song-item">
+      <span class="rank">{{ i + 1 }}</span>
+      <img *ngIf="song.albumCover" [src]="song.albumCover" alt="Album cover" class="album-cover" />
+      <div class="song-info">
+        <strong>{{ song.title }}</strong>
+        <span>{{ song.artist }}</span>
+      </div>
+      <span class="metric-value">{{ metricValue(song) }}</span>
+    </li>
+  </ol>
+</div>
